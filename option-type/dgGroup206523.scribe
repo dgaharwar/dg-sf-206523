@@ -1,0 +1,14 @@
+resource "option-type" "dgGroup206523" {
+  code = "dgGroup206523"
+  name = "dgGroup206523"
+  uuid = "45bf33df-8ba0-4457-b756-721eea7dd113"
+  fieldContext = "config.customOptions"
+  fieldLabel = "Group"
+  fieldName = "dgGroup206523"
+  labels = [ "206523" ]
+  noBlank = true
+  optionList = { name = "dgGroup206523" }
+  optionSource = "list"
+  required = true
+  type = "select"
+}
