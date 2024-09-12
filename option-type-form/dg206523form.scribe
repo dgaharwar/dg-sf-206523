@@ -1,0 +1,195 @@
+resource "option-type-form" "dg206523form" {
+  code = "dg206523form"
+  name = "dg206523form"
+  uuid = "e4f4914c-160d-4b7f-8a3c-12f9bb752bce"
+  config = {
+    enableVar = false
+    form = ""
+    formField = ""
+    formOptions = ""
+    formType = "static"
+  }
+  field-groups = [
+    {
+      code = "db0b2550-429d-4006-a3e5-e4a7b07d1c26"
+      name = "new fieldgroup"
+      collapsible = false
+      defaultCollapsed = false
+    }
+  ]
+  labels = [ "206523" ]
+  options = [
+    {
+      code = "dgGroup206523"
+      name = "dgGroup206523"
+      uuid = "45bf33df-8ba0-4457-b756-721eea7dd113"
+      fieldContext = "config.customOptions"
+      fieldLabel = "Group"
+      fieldName = "dgGroup206523"
+      labels = [ "206523" ]
+      noBlank = true
+      optionList = { name = "dgGroup206523" }
+      optionSource = "list"
+      required = true
+      type = "select"
+    },
+    {
+      code = "1412657b-1cc9-41aa-a00c-f66b1eba38c0"
+      name = "1412657b-1cc9-41aa-a00c-f66b1eba38c0"
+      uuid = "c938542e-d6af-4b9b-b108-ebb44396a233"
+      config = {
+        addon = ""
+        addonPosition = ""
+        cloudType = 19
+        filterResource = false
+        group = 2338
+        groupFieldType = "field"
+        groupId = ""
+        instanceTypeCode = "ubuntu"
+        instanceTypeFieldCode = ""
+        instanceTypeFieldType = "value"
+      }
+      displayOrder = 1
+      fieldContext = "config.customOptions"
+      fieldLabel = "Cloud"
+      fieldName = "dgCloud206523"
+      formField = true
+      refCode = "1412657b-1cc9-41aa-a00c-f66b1eba38c0"
+      required = true
+      type = "cloud"
+    },
+    {
+      code = "bfd4f671-db47-4acf-9223-2af40dfed30f"
+      name = "bfd4f671-db47-4acf-9223-2af40dfed30f"
+      uuid = "717893b9-a6a8-4aa0-b8f6-e3710f2dba77"
+      config = {
+        cloudField = "1412657b-1cc9-41aa-a00c-f66b1eba38c0"
+        cloudFieldType = "field"
+        cloudId = ""
+        groupField = 2338
+        groupFieldType = "field"
+        groupId = ""
+        instanceTypeCode = "ubuntu"
+        instanceTypeFieldCode = ""
+        instanceTypeFieldType = "value"
+      }
+      displayOrder = 2
+      fieldContext = "config.customOptions"
+      fieldLabel = "Layout"
+      fieldName = "dgLayout206523"
+      formField = true
+      refCode = "bfd4f671-db47-4acf-9223-2af40dfed30f"
+      required = true
+      type = "layout"
+    },
+    {
+      code = "dgPlan206523"
+      name = "dgPlan206523"
+      uuid = "c87d55a3-fc2d-46d8-8442-8af3838b5f9b"
+      dependsOnCode = "dgGroup206523,dgCloud206523,dgLayout206523,dgResourcePool206523"
+      fieldContext = "config.customOptions"
+      fieldLabel = "Plan"
+      fieldName = "dgPlan206523"
+      labels = [ "206523" ]
+      noBlank = true
+      optionList = { name = "dgPlan206523" }
+      optionSource = "list"
+      required = true
+      type = "select"
+    },
+    {
+      code = "cdd339a3-aeee-41db-b6f8-309345518fd3"
+      name = "dgResourcePool206523"
+      uuid = "cdd339a3-aeee-41db-b6f8-309345518fd3"
+      config = {
+        defaultValue = ""
+        multiSelect = false
+        sortable = false
+      }
+      dependsOnCode = "dgCloud206523,dgPlan206523"
+      displayOrder = 4
+      displayValueOnDetails = true
+      fieldContext = "config.customOptions"
+      fieldLabel = "Resource Pool"
+      fieldName = "dgResourcePool206523"
+      formField = true
+      isHidden = true
+      isLocked = true
+      noBlank = true
+      optionList = { name = "dgResourcePool206523" }
+      optionSource = "list"
+      refCode = "cdd339a3-aeee-41db-b6f8-309345518fd3"
+      required = true
+      type = "select"
+    },
+    {
+      code = "ab22cc50-cf25-40a1-88d6-bf090eeaca0c"
+      name = "ab22cc50-cf25-40a1-88d6-bf090eeaca0c"
+      uuid = "d58cbcfa-3cdc-4487-8de2-0c5ee744f67c"
+      config = {
+        cloudField = "1412657b-1cc9-41aa-a00c-f66b1eba38c0"
+        cloudFieldType = "field"
+        cloudId = ""
+        defaultValue = ""
+        enableIPModeSelection = false
+        groupField = 2338
+        groupFieldType = "field"
+        groupId = ""
+        layoutField = "bfd4f671-db47-4acf-9223-2af40dfed30f"
+        layoutFieldType = "field"
+        layoutId = ""
+        poolField = "cdd339a3-aeee-41db-b6f8-309345518fd3"
+        poolFieldType = "field"
+        poolId = ""
+        showNetworkTypeSelection = false
+      }
+      displayOrder = 5
+      fieldContext = "config.customOptions"
+      fieldLabel = "Network"
+      fieldName = "dgNetwork206523"
+      formField = true
+      refCode = "ab22cc50-cf25-40a1-88d6-bf090eeaca0c"
+      required = true
+      type = "networkManager"
+    },
+    {
+      code = "dd363ee1-c492-41e0-94f0-28118dcf114d"
+      name = "dd363ee1-c492-41e0-94f0-28118dcf114d"
+      uuid = "4ae605a7-5d4a-423c-bb09-bccd1771ae93"
+      config = {
+        addon = ""
+        addonPosition = ""
+        cloudField = "1412657b-1cc9-41aa-a00c-f66b1eba38c0"
+        cloudFieldType = "field"
+        cloudId = ""
+        defaultValue = ""
+        enableDatastoreSelection = true
+        enableDiskTypeSelection = false
+        enableStorageTypeSelection = false
+        groupField = "dgGroup206523"
+        groupFieldType = "field"
+        groupId = ""
+        imageField = ""
+        imageId = ""
+        layoutField = "bfd4f671-db47-4acf-9223-2af40dfed30f"
+        layoutFieldType = "field"
+        layoutId = ""
+        planField = "dgPlan206523"
+        planFieldType = "field"
+        planId = ""
+        poolField = "cdd339a3-aeee-41db-b6f8-309345518fd3"
+        poolFieldType = "field"
+        poolId = ""
+        virtualImageFieldType = "field"
+      }
+      displayOrder = 6
+      fieldContext = "config.customOptions"
+      fieldLabel = "Disks"
+      fieldName = "dgDisks206523"
+      formField = true
+      refCode = "dd363ee1-c492-41e0-94f0-28118dcf114d"
+      required = true
+      type = "diskManager"
+    }
+  ]
+}

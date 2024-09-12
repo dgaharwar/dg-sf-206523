@@ -1,0 +1,28 @@
+resource "option-type-list" "dgPlan206523" {
+  name = "dgPlan206523"
+  uuid = "905c89e1-8109-49b3-ac4e-fdfa3c5d053c"
+  apiType = "servicePlans"
+  labels = [ "206523" ]
+  realTime = true
+  requestScript = <<EOFSCRIBE
+results.siteId = input.dgGroup206523
+results.zoneId = input.dgCloud206523
+EOFSCRIBE
+  translationScript = <<EOFSCRIBE
+for (var x = 0; x < data.length; x++) {
+  if((input.dgGroup206523==2 || input.dgGroup206523==12) && data[x].name.includes("Linux")) {
+    switch(input.dgCloud206523) {
+    case "10":
+    if(data[x].name.includes("NPD"))
+          results.push({name:data[x].name, value:data[x].id});      
+    break;
+    case "19":
+      if(!data[x].name.includes("NPD") && !data[x].name.includes("LAB"))
+          results.push({name:data[x].name, value:data[x].id}); 
+    break;
+  }
+ }
+}
+EOFSCRIBE
+  type = "api"
+}

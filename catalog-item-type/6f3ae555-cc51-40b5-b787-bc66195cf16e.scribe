@@ -1,0 +1,106 @@
+resource "catalog-item-type" "6f3ae555-cc51-40b5-b787-bc66195cf16e" {
+  name = "dg206523catalog"
+  uuid = "6f3ae555-cc51-40b5-b787-bc66195cf16e"
+  config = {
+    name = "dg-test-vm2"
+    backup = {
+      backupRepository = ""
+      commvaultClient = 2378
+      commvaultStoragePolicy = 2384
+      createBackup = false
+      jobAction = "new"
+      jobRetentionCount = "2"
+      jobSchedule = 2
+      providerBackupType = -1
+      veeamManagedServer = ""
+    }
+    cloud = { name = "Demo", id = 10 }
+    config = {
+      createUser = true
+      hostId = null
+      isEC2 = false
+      isVpcSelectable = true
+      nestedVirtualization = null
+      noAgent = true
+      poolProviderType = null
+      resourcePoolId = "<%=customOptions.dgResourcePool206523%>"
+      smbiosAssetTag = null
+      vmwareFolderId = "group-v83"
+    }
+    copies = 1
+    defaultExpandAdvanced = false
+    group = { id = "<%=customOptions.dgGroup206523%>" }
+    hideLock = true
+    hostName = "dg-test-vm2"
+    instance = { userGroup = { id = "" } }
+    layout = { code = "vmware-ubuntu-18.04-single", id = 117 }
+    networkInterfaces = [
+      {
+        ipMode = ""
+        network = {
+          hasPool = false
+          id = "network-208"
+          idName = "VLAN0002 - Internal Server 2"
+        }
+        primaryInterface = true
+        showNetworkDhcpLabel = true
+        showNetworkPoolLabel = false
+      }
+    ]
+    plan = { id = "<%=customOptions.dgPlan206523%>" }
+    ports = [
+      {
+        code = "ubuntu.22"
+        name = "SSH"
+        externalPort = 22
+        id = 9
+        internalPort = 22
+        loadBalance = false
+        loadBalancePort = null
+        loadBalanceProtocol = null
+        shortName = "ssh"
+        sortOrder = 1
+        visible = true
+      }
+    ]
+    showScale = false
+    type = "ubuntu"
+    version = "18.04"
+    volumes = [
+      {
+        name = "root"
+        uuid = "bc13ca73-6d09-4064-aefc-1261244e4d28"
+        configurableIOPS = false
+        controllerId = 19
+        controllerMountPoint = "19:0:4:0"
+        datastoreId = "autoCluster"
+        displayOrder = 0
+        externalId = null
+        id = 8
+        internalId = null
+        maxIOPS = null
+        maxStorage = 2147483648
+        minStorage = 2147483648
+        planResizable = true
+        readonlyName = false
+        resizeable = true
+        rootVolume = true
+        size = 2
+        storageType = 1
+        typeId = 37
+        uniqueId = "vmware.morpheus.ubuntu.18.04.volume.0"
+        unitNumber = "0"
+        vId = 1643
+        virtualImageId = 1643
+        volumeCustomizable = false
+      }
+    ]
+  }
+  dateCreated = "2024-08-15T10:22:51.000Z"
+  featured = true
+  form = { code = "dg206523form" }
+  formType = "form"
+  labels = [ "206523" ]
+  lastUpdated = "2024-09-12T18:46:07.000Z"
+  refType = "InstanceType"
+}

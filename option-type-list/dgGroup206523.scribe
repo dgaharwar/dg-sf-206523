@@ -1,0 +1,8 @@
+resource "option-type-list" "dgGroup206523" {
+  name = "dgGroup206523"
+  uuid = "12cde342-c6c5-4c7c-b914-f73cfb8c637d"
+  apiType = "groups"
+  labels = [ "206523" ]
+  realTime = true
+  type = "api"
+}
