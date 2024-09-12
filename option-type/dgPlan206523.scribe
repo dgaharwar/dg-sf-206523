@@ -1,0 +1,15 @@
+resource "option-type" "dgPlan206523" {
+  code = "dgPlan206523"
+  name = "dgPlan206523"
+  uuid = "c87d55a3-fc2d-46d8-8442-8af3838b5f9b"
+  dependsOnCode = "dgGroup206523,dgCloud206523,dgLayout206523,dgResourcePool206523"
+  fieldContext = "config.customOptions"
+  fieldLabel = "Plan"
+  fieldName = "dgPlan206523"
+  labels = [ "206523" ]
+  noBlank = true
+  optionList = { name = "dgPlan206523" }
+  optionSource = "list"
+  required = true
+  type = "select"
+}
